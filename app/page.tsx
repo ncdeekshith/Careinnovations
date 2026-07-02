@@ -204,11 +204,11 @@ export default function Home() {
                 priority
                 className="h-full w-full object-cover"
               />
-              <div className="absolute left-5 top-5 rounded-lg border border-white/40 bg-white/82 p-4 shadow-soft backdrop-blur dark:border-white/15 dark:bg-[#071528]/72">
-                <p className="text-xs font-semibold uppercase tracking-[0.18em] text-ink/48 dark:text-white/48">Opportunity Pipeline</p>
-                <p className="mt-2 font-display text-3xl font-semibold text-navy dark:text-white">Qualified</p>
+              <div className="absolute left-5 top-5 rounded-lg border border-white/40 bg-white/82 p-3 shadow-soft backdrop-blur dark:border-white/15 dark:bg-[#071528]/72 sm:p-4">
+                <p className="text-[0.68rem] font-semibold uppercase tracking-[0.18em] text-ink/48 dark:text-white/48 sm:text-xs">Opportunity Pipeline</p>
+                <p className="mt-2 font-display text-2xl font-semibold text-navy dark:text-white sm:text-3xl">Qualified</p>
               </div>
-              <div className="absolute bottom-5 right-5 w-64 rounded-lg border border-navy/10 bg-navy p-5 text-white shadow-premium dark:border-white/10">
+              <div className="absolute bottom-5 right-5 w-56 rounded-lg border border-navy/10 bg-navy p-4 text-white shadow-premium dark:border-white/10 sm:w-64 sm:p-5">
                 <div className="flex items-center justify-between">
                   <p className="text-xs font-semibold uppercase tracking-[0.18em] text-white/55">Growth System</p>
                   <TrendingUp className="text-gold" size={22} />
@@ -237,7 +237,7 @@ export default function Home() {
       </section>
 
       <section id="about" className="py-24">
-        <div className="section grid gap-12 lg:grid-cols-[0.85fr_1.15fr] lg:items-center">
+        <div className="section grid gap-10 lg:grid-cols-[0.85fr_1.15fr] lg:items-center">
           <Reveal>
             <p className="eyebrow mb-4">The Firm</p>
             <h2 className="heading-lg text-balance">A business development partner, not a lead list vendor.</h2>
@@ -263,13 +263,13 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="bg-mist py-24 dark:bg-white/[0.04]">
+      <section className="bg-mist py-16 dark:bg-white/[0.04]">
         <div className="section grid gap-5 md:grid-cols-2">
           {[
             ["Mission", "Strategic consulting that creates lasting partnerships and sustainable growth."],
             ["Vision", "A trusted growth partner for relationship-driven business development."]
           ].map(([title, text], index) => (
-            <Reveal key={title} delay={index * 0.04} className="premium-card flex min-h-64 flex-col justify-between p-8">
+            <Reveal key={title} delay={index * 0.04} className="premium-card flex min-h-48 flex-col justify-between p-7">
               <ShieldCheck className="text-gold" size={36} />
               <div>
                 <h2 className="font-display text-4xl font-semibold text-navy dark:text-white">{title}</h2>
@@ -347,13 +347,13 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="process" className="bg-mist py-24 dark:bg-white/[0.04]">
+      <section id="process" className="bg-mist py-16 dark:bg-white/[0.04]">
         <div className="section">
           <Reveal className="mx-auto max-w-3xl text-center">
             <p className="eyebrow mb-4">Approach</p>
-            <h2 className="heading-lg text-balance">A clear growth development path.</h2>
+            <h2 className="font-display text-3xl font-semibold tracking-normal text-navy sm:text-4xl lg:text-5xl dark:text-white">A clear growth development path.</h2>
           </Reveal>
-          <Reveal delay={0.08} className="mt-14 rounded-lg border border-navy/10 bg-white p-5 shadow-soft dark:border-white/10 dark:bg-white/[0.06]">
+          <Reveal delay={0.08} className="mt-10 rounded-lg border border-navy/10 bg-white p-4 shadow-soft dark:border-white/10 dark:bg-white/[0.06]">
             <div className="process-line">
               {processSteps.map(([number, title]) => (
                 <div key={title} className="process-step">
