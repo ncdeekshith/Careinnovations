@@ -67,7 +67,7 @@ const industries = [
   [Network, "Enterprises"]
 ];
 
-const process = [
+const processSteps = [
   ["01", "Understand"],
   ["02", "Map"],
   ["03", "Position"],
@@ -89,6 +89,8 @@ const caseStudies = [
   ["Lead Development", "Qualified pipeline"],
   ["Growth Consulting", "Sharper positioning"]
 ];
+
+const assetBase = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
 
 export default function Home() {
   const [open, setOpen] = useState(false);
@@ -195,7 +197,7 @@ export default function Home() {
           <Reveal delay={0.1} className="relative">
             <div className="executive-visual">
               <Image
-                src="/images/care-innovations-growth-visual.png"
+                src={`${assetBase}/images/care-innovations-growth-visual.png`}
                 alt="Abstract strategic growth visualization with connected opportunity nodes"
                 width={1536}
                 height={1024}
@@ -353,7 +355,7 @@ export default function Home() {
           </Reveal>
           <Reveal delay={0.08} className="mt-14 rounded-lg border border-navy/10 bg-white p-5 shadow-soft dark:border-white/10 dark:bg-white/[0.06]">
             <div className="process-line">
-              {process.map(([number, title]) => (
+              {processSteps.map(([number, title]) => (
                 <div key={title} className="process-step">
                   <span>{number}</span>
                   <strong>{title}</strong>
