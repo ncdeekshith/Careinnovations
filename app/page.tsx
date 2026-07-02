@@ -36,7 +36,7 @@ const navItems = [
   ["Firm", "#about"],
   ["Services", "#services"],
   ["Approach", "#process"],
-  ["Leadership", "#founder"],
+  ["Team", "#strategists"],
   ["Contact", "#contact"]
 ];
 
@@ -91,6 +91,33 @@ const caseStudies = [
 ];
 
 const assetBase = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
+
+const strategists = [
+  {
+    name: "Vinay Murudi",
+    role: "Startup & Growth Strategist",
+    image: `${assetBase}/images/team-vinay-murudi.jpeg`,
+    summary: "Entrepreneur, EdTech CEO and IIM Bangalore MBA with deep experience in startup strategy, fundraising and scalable B2B2C growth models.",
+    highlights: [
+      "Co-Founder & CEO, Arivu Learning / myPAL",
+      "MBA, IIM Bangalore",
+      "Raised 8Cr+ and drove 4Cr+ revenue",
+      "Startup strategy, sales and emerging-market growth"
+    ]
+  },
+  {
+    name: "Shivaprasad Hiremath",
+    role: "Education & Market Access Strategist",
+    image: `${assetBase}/images/team-shivaprasad-hiremath.jpeg`,
+    summary: "Co-founder and operator focused on democratizing EdTech access in Bharat through networks, sales systems and micro-entrepreneurship.",
+    highlights: [
+      "Co-Founder, myPAL",
+      "Bharat and rural education access",
+      "Network of achievers, founders and local operators",
+      "Sales, community building and micro-entrepreneur models"
+    ]
+  }
+];
 
 export default function Home() {
   const [open, setOpen] = useState(false);
@@ -399,6 +426,51 @@ export default function Home() {
               &quot;Growth happens when opportunities meet the right relationships and strategic execution.&quot;
             </blockquote>
           </Reveal>
+        </div>
+      </section>
+
+      <section id="strategists" className="bg-mist py-20 dark:bg-white/[0.04]">
+        <div className="section">
+          <Reveal className="mx-auto max-w-3xl text-center">
+            <p className="eyebrow mb-4">Strategists</p>
+            <h2 className="font-display text-3xl font-semibold tracking-normal text-navy sm:text-4xl lg:text-5xl dark:text-white">
+              Specialist minds strengthening the growth desk.
+            </h2>
+          </Reveal>
+
+          <div className="mt-12 grid gap-6 lg:grid-cols-2">
+            {strategists.map((person, index) => (
+              <Reveal key={person.name} delay={index * 0.06} className="overflow-hidden rounded-lg border border-navy/10 bg-white shadow-soft transition hover:-translate-y-1 hover:shadow-premium dark:border-white/10 dark:bg-white/[0.06]">
+                <div className="grid sm:grid-cols-[0.9fr_1.1fr]">
+                  <div className="relative min-h-80 overflow-hidden bg-navy">
+                    <Image
+                      src={person.image}
+                      alt={`${person.name}, ${person.role}`}
+                      width={900}
+                      height={900}
+                      className="h-full w-full object-cover object-center"
+                    />
+                    <div className="absolute inset-0 bg-[linear-gradient(180deg,transparent_48%,rgba(11,31,58,0.58)_100%)]" />
+                  </div>
+                  <div className="flex flex-col justify-between p-7">
+                    <div>
+                      <p className="text-xs font-semibold uppercase tracking-[0.18em] text-gold">{person.role}</p>
+                      <h3 className="mt-3 font-display text-3xl font-semibold text-navy dark:text-white">{person.name}</h3>
+                      <p className="mt-4 text-base leading-7 text-ink/65 dark:text-white/65">{person.summary}</p>
+                    </div>
+                    <div className="mt-7 grid gap-3">
+                      {person.highlights.map((highlight) => (
+                        <div key={highlight} className="flex items-start gap-3 rounded-lg bg-mist p-3 dark:bg-white/8">
+                          <CheckCircle2 className="mt-0.5 shrink-0 text-gold" size={17} />
+                          <span className="text-sm font-semibold leading-6 text-ink/68 dark:text-white/68">{highlight}</span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              </Reveal>
+            ))}
+          </div>
         </div>
       </section>
 
