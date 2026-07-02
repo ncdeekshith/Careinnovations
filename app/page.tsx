@@ -1,0 +1,496 @@
+"use client";
+
+import Image from "next/image";
+import {
+  ArrowRight,
+  BarChart3,
+  BriefcaseBusiness,
+  Building2,
+  CheckCircle2,
+  CircleDollarSign,
+  Factory,
+  GraduationCap,
+  Handshake,
+  HeartPulse,
+  Landmark,
+  Laptop2,
+  Linkedin,
+  Mail,
+  MapPin,
+  Menu,
+  Network,
+  Phone,
+  Rocket,
+  Search,
+  ShieldCheck,
+  Target,
+  TrendingUp,
+  Users,
+  X
+} from "lucide-react";
+import { useState } from "react";
+import { Reveal } from "@/components/Motion";
+import { ThemeToggle } from "@/components/ThemeToggle";
+
+const navItems = [
+  ["Firm", "#about"],
+  ["Services", "#services"],
+  ["Approach", "#process"],
+  ["Leadership", "#founder"],
+  ["Contact", "#contact"]
+];
+
+const proof = [
+  ["2001", "Founded"],
+  ["25+", "Years"],
+  ["200+", "Partnerships"],
+  ["95%", "Retention"]
+];
+
+const services = [
+  [Search, "Market Research", "Find priority sectors and accounts."],
+  [Target, "Opportunity Development", "Qualify, nurture, and advance deals."],
+  [Handshake, "Client Relationships", "Build trust with decision-makers."],
+  [BriefcaseBusiness, "BD Consulting", "Sharpen positioning and outreach."],
+  [CircleDollarSign, "Sales Support", "Support proposals and closure."],
+  [TrendingUp, "Growth Advisory", "Plan expansion with discipline."]
+];
+
+const industries = [
+  [HeartPulse, "Healthcare"],
+  [Laptop2, "Technology"],
+  [Factory, "Manufacturing"],
+  [GraduationCap, "Education"],
+  [Landmark, "Professional Services"],
+  [Rocket, "Startups"],
+  [Building2, "SMEs"],
+  [Network, "Enterprises"]
+];
+
+const process = [
+  ["01", "Understand"],
+  ["02", "Map"],
+  ["03", "Position"],
+  ["04", "Engage"],
+  ["05", "Close"],
+  ["06", "Scale"]
+];
+
+const outcomes = [
+  ["Qualified Pipeline", "Better-fit accounts and conversations."],
+  ["Relationship Depth", "Trust built before the decision point."],
+  ["Execution Rhythm", "Consistent follow-through across pursuits."],
+  ["Strategic Clarity", "Clearer priorities for growth teams."]
+];
+
+const caseStudies = [
+  ["Market Expansion", "New sector entry"],
+  ["Partnerships", "Long-term alliances"],
+  ["Lead Development", "Qualified pipeline"],
+  ["Growth Consulting", "Sharper positioning"]
+];
+
+export default function Home() {
+  const [open, setOpen] = useState(false);
+
+  return (
+    <main className="overflow-hidden bg-white text-ink dark:bg-[#071528] dark:text-white">
+      <header className="fixed inset-x-0 top-0 z-50 border-b border-navy/10 bg-white/86 backdrop-blur-xl dark:border-white/10 dark:bg-[#071528]/84">
+        <nav className="section flex h-20 items-center justify-between">
+          <a href="#home" className="flex items-center gap-3" aria-label="Care Innovations home">
+            <span className="grid h-11 w-11 place-items-center rounded-lg bg-navy text-lg font-semibold text-gold shadow-sm dark:bg-white dark:text-navy">
+              CI
+            </span>
+            <span>
+              <span className="block font-display text-lg font-semibold leading-tight text-navy dark:text-white">
+                Care Innovations
+              </span>
+              <span className="block text-xs font-medium text-ink/55 dark:text-white/55">
+                Strategic Growth Partner
+              </span>
+            </span>
+          </a>
+
+          <div className="hidden items-center gap-1 rounded-full border border-navy/10 bg-white/75 p-1 shadow-sm lg:flex dark:border-white/10 dark:bg-white/8">
+            {navItems.map(([label, href]) => (
+              <a
+                key={label}
+                href={href}
+                className="rounded-full px-4 py-2 text-sm font-semibold text-ink/65 transition hover:bg-navy hover:text-white dark:text-white/68 dark:hover:bg-white dark:hover:text-navy"
+              >
+                {label}
+              </a>
+            ))}
+          </div>
+
+          <div className="flex items-center gap-3">
+            <ThemeToggle />
+            <a href="#contact" className="btn-primary hidden sm:inline-flex">
+              Book a Call <ArrowRight size={16} />
+            </a>
+            <button
+              type="button"
+              aria-label="Toggle menu"
+              onClick={() => setOpen((value) => !value)}
+              className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-navy/10 bg-white/80 text-navy lg:hidden dark:border-white/15 dark:bg-white/10 dark:text-white"
+            >
+              {open ? <X size={19} /> : <Menu size={19} />}
+            </button>
+          </div>
+        </nav>
+
+        {open && (
+          <div className="section pb-5 lg:hidden">
+            <div className="rounded-lg border border-navy/10 bg-white p-3 shadow-premium dark:border-white/10 dark:bg-[#0B1F3A]">
+              {navItems.map(([label, href]) => (
+                <a
+                  key={label}
+                  href={href}
+                  onClick={() => setOpen(false)}
+                  className="block rounded-md px-3 py-3 text-sm font-semibold text-ink/75 hover:bg-mist dark:text-white/75 dark:hover:bg-white/10"
+                >
+                  {label}
+                </a>
+              ))}
+            </div>
+          </div>
+        )}
+      </header>
+
+      <section id="home" className="relative pt-28">
+        <div className="absolute inset-0 -z-10 bg-[linear-gradient(180deg,#F8F9FA_0%,#FFFFFF_50%,#F8F9FA_100%)] dark:bg-[linear-gradient(180deg,#071528_0%,#0B1F3A_58%,#071528_100%)]" />
+        <div className="section grid min-h-[calc(100vh-7rem)] items-center gap-12 pb-12 lg:grid-cols-[0.92fr_1.08fr]">
+          <Reveal>
+            <div className="mb-7 inline-flex items-center gap-3 rounded-full border border-navy/10 bg-white/80 px-4 py-2 text-xs font-semibold uppercase tracking-[0.2em] text-navy/70 shadow-sm dark:border-white/10 dark:bg-white/8 dark:text-white/70">
+              <span className="h-2 w-2 rounded-full bg-gold" />
+              Bengaluru | Since 2001
+            </div>
+            <h1 className="heading-xl max-w-5xl text-balance">
+              Growth opportunities, developed strategically.
+            </h1>
+            <p className="mt-7 max-w-xl text-xl leading-8 text-ink/68 dark:text-white/68">
+              Care Innovations helps companies find the right opportunities, build the right relationships, and move deals forward.
+            </p>
+            <div className="mt-9 flex flex-col gap-3 sm:flex-row">
+              <a href="#contact" className="btn-primary">
+                Book a Strategy Call <ArrowRight size={17} />
+              </a>
+              <a href="#services" className="btn-secondary">
+                View Capabilities
+              </a>
+            </div>
+
+            <div className="mt-10 grid grid-cols-2 gap-3 sm:grid-cols-4">
+              {proof.map(([value, label]) => (
+                <div key={label} className="rounded-lg border border-navy/10 bg-white/80 p-4 text-center shadow-sm dark:border-white/10 dark:bg-white/8">
+                  <div className="font-display text-3xl font-semibold text-navy dark:text-white">{value}</div>
+                  <div className="mt-1 text-xs font-semibold uppercase tracking-[0.14em] text-ink/45 dark:text-white/45">
+                    {label}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </Reveal>
+
+          <Reveal delay={0.1} className="relative">
+            <div className="executive-visual">
+              <Image
+                src="/images/care-innovations-growth-visual.png"
+                alt="Abstract strategic growth visualization with connected opportunity nodes"
+                width={1536}
+                height={1024}
+                priority
+                className="h-full w-full object-cover"
+              />
+              <div className="absolute left-5 top-5 rounded-lg border border-white/40 bg-white/82 p-4 shadow-soft backdrop-blur dark:border-white/15 dark:bg-[#071528]/72">
+                <p className="text-xs font-semibold uppercase tracking-[0.18em] text-ink/48 dark:text-white/48">Opportunity Pipeline</p>
+                <p className="mt-2 font-display text-3xl font-semibold text-navy dark:text-white">Qualified</p>
+              </div>
+              <div className="absolute bottom-5 right-5 w-64 rounded-lg border border-navy/10 bg-navy p-5 text-white shadow-premium dark:border-white/10">
+                <div className="flex items-center justify-between">
+                  <p className="text-xs font-semibold uppercase tracking-[0.18em] text-white/55">Growth System</p>
+                  <TrendingUp className="text-gold" size={22} />
+                </div>
+                <div className="mt-5 grid grid-cols-3 gap-2 text-center text-xs font-semibold">
+                  {["Insight", "Trust", "Close"].map((item) => (
+                    <span key={item} className="rounded-full bg-white/10 px-2 py-2 text-white/72">{item}</span>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </Reveal>
+        </div>
+      </section>
+
+      <section className="py-10">
+        <div className="section">
+          <Reveal className="grid gap-3 rounded-lg border border-navy/10 bg-white p-3 shadow-soft sm:grid-cols-3 lg:grid-cols-6 dark:border-white/10 dark:bg-white/[0.06]">
+            {["Identify", "Qualify", "Position", "Engage", "Negotiate", "Scale"].map((item) => (
+              <div key={item} className="rounded-md bg-mist px-4 py-4 text-center text-sm font-semibold text-navy/62 dark:bg-white/8 dark:text-white/62">
+                {item}
+              </div>
+            ))}
+          </Reveal>
+        </div>
+      </section>
+
+      <section id="about" className="py-24">
+        <div className="section grid gap-12 lg:grid-cols-[0.85fr_1.15fr] lg:items-center">
+          <Reveal>
+            <p className="eyebrow mb-4">The Firm</p>
+            <h2 className="heading-lg text-balance">A business development partner, not a lead list vendor.</h2>
+          </Reveal>
+          <Reveal delay={0.08}>
+            <div className="visual-map">
+              {[
+                ["Market Insight", Search],
+                ["Relationship Access", Users],
+                ["Opportunity Momentum", TrendingUp],
+                ["Closure Support", ShieldCheck]
+              ].map(([label, Icon], index) => (
+                <div key={label as string} className={`visual-node visual-node-${index + 1}`}>
+                  <Icon size={24} />
+                  <span>{label as string}</span>
+                </div>
+              ))}
+              <div className="visual-center">
+                <span>Care Innovations</span>
+              </div>
+            </div>
+          </Reveal>
+        </div>
+      </section>
+
+      <section className="bg-mist py-24 dark:bg-white/[0.04]">
+        <div className="section grid gap-5 md:grid-cols-2">
+          {[
+            ["Mission", "Strategic consulting that creates lasting partnerships and sustainable growth."],
+            ["Vision", "A trusted growth partner for relationship-driven business development."]
+          ].map(([title, text], index) => (
+            <Reveal key={title} delay={index * 0.04} className="premium-card flex min-h-64 flex-col justify-between p-8">
+              <ShieldCheck className="text-gold" size={36} />
+              <div>
+                <h2 className="font-display text-4xl font-semibold text-navy dark:text-white">{title}</h2>
+                <p className="mt-4 text-lg leading-7 text-ink/65 dark:text-white/65">{text}</p>
+              </div>
+            </Reveal>
+          ))}
+        </div>
+      </section>
+
+      <section id="services" className="py-24">
+        <div className="section">
+          <Reveal className="mx-auto max-w-3xl text-center">
+            <p className="eyebrow mb-4">Capabilities</p>
+            <h2 className="heading-lg text-balance">From opportunity signal to commercial movement.</h2>
+          </Reveal>
+
+          <div className="mt-12 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+            {services.map(([Icon, title, text], index) => (
+              <Reveal key={title as string} delay={index * 0.03} className="premium-card group min-h-64">
+                <div className="mb-8 flex items-center justify-between">
+                  <div className="grid h-12 w-12 place-items-center rounded-lg bg-navy text-gold transition group-hover:bg-gold group-hover:text-navy dark:bg-white dark:text-navy">
+                    <Icon size={24} />
+                  </div>
+                  <span className="text-xs font-semibold uppercase tracking-[0.18em] text-ink/35 dark:text-white/35">
+                    0{index + 1}
+                  </span>
+                </div>
+                <h3 className="font-display text-2xl font-semibold text-navy dark:text-white">{title as string}</h3>
+                <p className="mt-4 text-base leading-7 text-ink/62 dark:text-white/62">{text as string}</p>
+              </Reveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-navy py-24 text-white">
+        <div className="section">
+          <Reveal className="grid gap-8 lg:grid-cols-[0.85fr_1.15fr] lg:items-end">
+            <div>
+              <p className="eyebrow mb-4">Industries</p>
+              <h2 className="font-display text-3xl font-semibold sm:text-4xl lg:text-5xl">
+                Built around B2B trust, across sectors.
+              </h2>
+            </div>
+            <div className="grid grid-cols-2 gap-3 sm:grid-cols-4">
+              {industries.map(([Icon, label]) => (
+                <div key={label as string} className="rounded-lg border border-white/10 bg-white/[0.06] p-4 text-center">
+                  <Icon className="mx-auto text-gold" size={24} />
+                  <p className="mt-3 text-sm font-semibold text-white/72">{label as string}</p>
+                </div>
+              ))}
+            </div>
+          </Reveal>
+        </div>
+      </section>
+
+      <section className="py-24">
+        <div className="section">
+          <Reveal className="mx-auto max-w-3xl text-center">
+            <p className="eyebrow mb-4">Outcomes</p>
+            <h2 className="heading-lg text-balance">What improves when strategy and execution work together.</h2>
+          </Reveal>
+          <div className="mt-12 grid gap-5 md:grid-cols-4">
+            {outcomes.map(([title, text], index) => (
+              <Reveal key={title} delay={index * 0.04} className="premium-card text-center">
+                <div className="mx-auto mb-6 grid h-12 w-12 place-items-center rounded-full bg-gold/15 text-sm font-bold text-gold">
+                  {index + 1}
+                </div>
+                <h3 className="font-display text-xl font-semibold text-navy dark:text-white">{title}</h3>
+                <p className="mt-3 text-sm leading-6 text-ink/60 dark:text-white/60">{text}</p>
+              </Reveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section id="process" className="bg-mist py-24 dark:bg-white/[0.04]">
+        <div className="section">
+          <Reveal className="mx-auto max-w-3xl text-center">
+            <p className="eyebrow mb-4">Approach</p>
+            <h2 className="heading-lg text-balance">A clear growth development path.</h2>
+          </Reveal>
+          <Reveal delay={0.08} className="mt-14 rounded-lg border border-navy/10 bg-white p-5 shadow-soft dark:border-white/10 dark:bg-white/[0.06]">
+            <div className="process-line">
+              {process.map(([number, title]) => (
+                <div key={title} className="process-step">
+                  <span>{number}</span>
+                  <strong>{title}</strong>
+                </div>
+              ))}
+            </div>
+          </Reveal>
+        </div>
+      </section>
+
+      <section id="founder" className="py-24">
+        <div className="section grid gap-10 lg:grid-cols-[0.8fr_1.2fr] lg:items-center">
+          <Reveal>
+            <div className="founder-card">
+              <div className="grid h-28 w-28 place-items-center rounded-full border border-white/18 bg-white/10 text-4xl font-semibold text-gold">
+                AP
+              </div>
+              <div>
+                <p className="text-sm font-semibold uppercase tracking-[0.22em] text-gold">Founder & CEO</p>
+                <h2 className="mt-2 font-display text-4xl font-semibold text-white">Aravind Patil</h2>
+              </div>
+            </div>
+          </Reveal>
+          <Reveal delay={0.08}>
+            <p className="eyebrow mb-4">Leadership</p>
+            <h2 className="heading-lg text-balance">25+ years of business consulting experience.</h2>
+            <div className="mt-8 grid gap-3 sm:grid-cols-2">
+              {[
+                "Strategic advisor",
+                "Business consulting expert",
+                "MBA, ITM Chennai",
+                "BA, Karnataka University"
+              ].map((item) => (
+                <div key={item} className="flex items-center gap-3 rounded-lg border border-navy/10 p-4 dark:border-white/10">
+                  <CheckCircle2 className="shrink-0 text-gold" size={19} />
+                  <span className="text-sm font-semibold text-ink/70 dark:text-white/70">{item}</span>
+                </div>
+              ))}
+            </div>
+            <blockquote className="mt-8 border-l-4 border-gold pl-6 font-display text-2xl font-medium leading-snug text-navy dark:text-white">
+              &quot;Growth happens when opportunities meet the right relationships and strategic execution.&quot;
+            </blockquote>
+          </Reveal>
+        </div>
+      </section>
+
+      <section className="bg-navy py-20 text-white">
+        <div className="section grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+          {caseStudies.map(([title, text], index) => (
+            <Reveal key={title} delay={index * 0.04} className="rounded-lg border border-white/10 bg-white/[0.06] p-6">
+              <BarChart3 className="mb-8 text-gold" />
+              <h3 className="font-display text-2xl font-semibold">{title}</h3>
+              <p className="mt-3 text-sm font-semibold uppercase tracking-[0.12em] text-white/50">{text}</p>
+            </Reveal>
+          ))}
+        </div>
+      </section>
+
+      <section id="contact" className="py-24">
+        <div className="section">
+          <Reveal className="grid overflow-hidden rounded-lg border border-navy/10 bg-white shadow-premium lg:grid-cols-[0.85fr_1.15fr] dark:border-white/10 dark:bg-white/[0.06]">
+            <div className="bg-navy p-8 text-white sm:p-12">
+              <p className="eyebrow mb-4">Contact</p>
+              <h2 className="font-display text-4xl font-semibold sm:text-5xl">Start a growth conversation.</h2>
+              <div className="mt-10 space-y-4 text-white/72">
+                <p className="flex items-center gap-3"><Mail className="text-gold" size={20} /> care.aravind@gmail.com</p>
+                <p className="flex items-center gap-3"><Phone className="text-gold" size={20} /> Strategy call by appointment</p>
+                <p className="flex items-center gap-3"><MapPin className="text-gold" size={20} /> Bengaluru, India</p>
+              </div>
+            </div>
+            <form className="grid gap-4 p-5 sm:grid-cols-2 sm:p-8">
+              {["Name", "Company", "Email", "Phone"].map((field) => (
+                <label key={field} className="space-y-2 text-sm font-semibold text-navy dark:text-white">
+                  <span>{field}</span>
+                  <input
+                    type={field === "Email" ? "email" : field === "Phone" ? "tel" : "text"}
+                    className="w-full rounded-lg border-navy/10 bg-mist px-4 py-3 text-ink shadow-none focus:border-gold focus:ring-gold dark:border-white/10 dark:bg-white/10 dark:text-white"
+                  />
+                </label>
+              ))}
+              <label className="space-y-2 text-sm font-semibold text-navy sm:col-span-2 dark:text-white">
+                <span>Service Required</span>
+                <select className="w-full rounded-lg border-navy/10 bg-mist px-4 py-3 text-ink shadow-none focus:border-gold focus:ring-gold dark:border-white/10 dark:bg-white/10 dark:text-white">
+                  {services.map(([, title]) => (
+                    <option key={title as string}>{title as string}</option>
+                  ))}
+                </select>
+              </label>
+              <label className="space-y-2 text-sm font-semibold text-navy sm:col-span-2 dark:text-white">
+                <span>Message</span>
+                <textarea rows={4} className="w-full rounded-lg border-navy/10 bg-mist px-4 py-3 text-ink shadow-none focus:border-gold focus:ring-gold dark:border-white/10 dark:bg-white/10 dark:text-white" />
+              </label>
+              <button type="submit" className="btn-primary sm:col-span-2">
+                Submit Inquiry <ArrowRight size={17} />
+              </button>
+            </form>
+          </Reveal>
+        </div>
+      </section>
+
+      <footer className="border-t border-navy/10 bg-white py-10 dark:border-white/10 dark:bg-[#071528]">
+        <div className="section grid gap-8 md:grid-cols-[1fr_auto_auto_auto] md:items-start">
+          <div>
+            <div className="flex items-center gap-3">
+              <span className="grid h-10 w-10 place-items-center rounded-lg bg-navy text-sm font-semibold text-gold dark:bg-white dark:text-navy">CI</span>
+              <span className="font-display text-lg font-semibold text-navy dark:text-white">Care Innovations</span>
+            </div>
+            <p className="mt-4 max-w-sm text-sm leading-6 text-ink/60 dark:text-white/58">
+              Strategic opportunity development for sustainable growth.
+            </p>
+          </div>
+          <div>
+            <h3 className="mb-3 text-sm font-semibold text-navy dark:text-white">Quick Links</h3>
+            <div className="space-y-2 text-sm text-ink/60 dark:text-white/58">
+              {navItems.slice(0, 4).map(([label, href]) => <a key={label} href={href} className="block hover:text-gold">{label}</a>)}
+            </div>
+          </div>
+          <div>
+            <h3 className="mb-3 text-sm font-semibold text-navy dark:text-white">Services</h3>
+            <div className="space-y-2 text-sm text-ink/60 dark:text-white/58">
+              <a href="#services" className="block hover:text-gold">Opportunity Development</a>
+              <a href="#services" className="block hover:text-gold">Growth Advisory</a>
+              <a href="#services" className="block hover:text-gold">Sales Support</a>
+            </div>
+          </div>
+          <div>
+            <h3 className="mb-3 text-sm font-semibold text-navy dark:text-white">Contact</h3>
+            <a href="mailto:care.aravind@gmail.com" className="block text-sm text-ink/60 hover:text-gold dark:text-white/58">care.aravind@gmail.com</a>
+            <a href="https://www.linkedin.com/" aria-label="LinkedIn" className="mt-4 inline-flex h-10 w-10 items-center justify-center rounded-full border border-navy/10 text-navy hover:border-gold hover:text-gold dark:border-white/10 dark:text-white">
+              <Linkedin size={18} />
+            </a>
+          </div>
+        </div>
+        <div className="section mt-9 border-t border-navy/10 pt-6 text-sm text-ink/50 dark:border-white/10 dark:text-white/45">
+          Copyright © 2026 Care Innovations. All rights reserved.
+        </div>
+      </footer>
+    </main>
+  );
+}
