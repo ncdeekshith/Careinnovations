@@ -274,7 +274,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="py-8 sm:py-10">
+      <section className="mobile-skip py-8 sm:py-10">
         <div className="section">
           <Reveal className="grid grid-cols-2 gap-2 rounded-lg border border-navy/10 bg-white p-2 shadow-soft sm:grid-cols-3 sm:gap-3 sm:p-3 lg:grid-cols-6 dark:border-white/10 dark:bg-white/[0.06]">
             {["Identify", "Qualify", "Position", "Engage", "Negotiate", "Scale"].map((item) => (
@@ -326,7 +326,7 @@ export default function Home() {
                 The work spans market requirements, tender coordination, supply and installation oversight, execution support and timely collection.
               </p>
             </div>
-            <div className="grid gap-3 p-4 sm:grid-cols-2 sm:p-5">
+            <div className="lifecycle-grid grid gap-3 p-4 sm:grid-cols-2 sm:p-5">
               {lifecycle.map(([Icon, title, text], index) => (
                 <Reveal key={title as string} delay={index * 0.035} className="lifecycle-card">
                   <div className="flex items-center justify-between">
@@ -345,7 +345,7 @@ export default function Home() {
       </section>
 
       <section className="bg-mist py-14 sm:py-16 dark:bg-white/[0.04]">
-        <div className="section grid gap-5 md:grid-cols-2">
+        <div className="mobile-card-rail section grid gap-5 md:grid-cols-2">
           {[
             ["Mission", "Strategic consulting that creates lasting partnerships and sustainable growth."],
             ["Vision", "A trusted growth partner for relationship-driven business development."]
@@ -368,7 +368,7 @@ export default function Home() {
             <h2 className="heading-lg text-balance">From opportunity signal to commercial movement.</h2>
           </Reveal>
 
-          <div className="mt-9 grid gap-4 sm:mt-12 sm:gap-5 md:grid-cols-2 lg:grid-cols-3">
+          <div className="mobile-card-rail mt-9 grid gap-4 sm:mt-12 sm:gap-5 md:grid-cols-2 lg:grid-cols-3">
             {services.map(([Icon, title, text], index) => (
               <Reveal key={title as string} delay={index * 0.03} className="premium-card group min-h-0 p-5 sm:min-h-64 sm:p-6">
                 <div className="mb-5 flex items-center justify-between sm:mb-8">
@@ -396,7 +396,7 @@ export default function Home() {
                 Built around B2B trust, across sectors.
               </h2>
             </div>
-            <div className="grid grid-cols-2 gap-3 sm:grid-cols-4">
+            <div className="mobile-icon-rail grid grid-cols-2 gap-3 sm:grid-cols-4">
               {industries.map(([Icon, label]) => (
                 <div key={label as string} className="rounded-lg border border-white/10 bg-white/[0.06] p-4 text-center">
                   <Icon className="mx-auto text-gold" size={24} />
@@ -415,7 +415,7 @@ export default function Home() {
               <p className="eyebrow mb-4">Partnerships</p>
               <h2 className="heading-lg text-balance">Trusted by leading organizations across industrial, mobility, insurance and networking segments.</h2>
             </div>
-            <div className="grid grid-cols-2 gap-2 sm:gap-3 md:grid-cols-3">
+            <div className="mobile-brand-rail grid grid-cols-2 gap-2 sm:gap-3 md:grid-cols-3">
               {partners.map((partner) => (
                 <div key={partner} className="brand-tile">
                   {partner}
@@ -448,13 +448,13 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="py-16 sm:py-20 lg:py-24">
+      <section className="mobile-skip py-16 sm:py-20 lg:py-24">
         <div className="section">
           <Reveal className="mx-auto max-w-3xl text-center">
             <p className="eyebrow mb-4">Outcomes</p>
             <h2 className="heading-lg text-balance">What improves when strategy and execution work together.</h2>
           </Reveal>
-          <div className="mt-9 grid gap-4 sm:mt-12 sm:gap-5 md:grid-cols-4">
+          <div className="mobile-card-rail mt-9 grid gap-4 sm:mt-12 sm:gap-5 md:grid-cols-4">
             {outcomes.map(([title, text], index) => (
               <Reveal key={title} delay={index * 0.04} className="premium-card text-center">
                 <div className="mx-auto mb-6 grid h-12 w-12 place-items-center rounded-full bg-gold/15 text-sm font-bold text-gold">
@@ -520,7 +520,7 @@ export default function Home() {
                 </div>
               ))}
             </div>
-            <blockquote className="mt-7 border-l-4 border-gold pl-5 font-display text-xl font-medium leading-snug text-navy sm:mt-8 sm:pl-6 sm:text-2xl dark:text-white">
+            <blockquote className="hidden mt-7 border-l-4 border-gold pl-5 font-display text-xl font-medium leading-snug text-navy sm:mt-8 sm:block sm:pl-6 sm:text-2xl dark:text-white">
               &quot;Growth happens when opportunities meet the right relationships and strategic execution.&quot;
             </blockquote>
           </Reveal>
@@ -536,7 +536,7 @@ export default function Home() {
             </h2>
           </Reveal>
 
-          <div className="mt-9 grid gap-5 sm:mt-12 sm:gap-6 lg:grid-cols-2">
+          <div className="mobile-card-rail mt-9 grid gap-5 sm:mt-12 sm:gap-6 lg:grid-cols-2">
             {strategists.map((person, index) => (
               <Reveal key={person.name} delay={index * 0.06} className="overflow-hidden rounded-lg border border-navy/10 bg-white shadow-soft transition hover:-translate-y-1 hover:shadow-premium dark:border-white/10 dark:bg-white/[0.06]">
                 <div className="grid sm:grid-cols-[0.9fr_1.1fr]">
@@ -554,9 +554,9 @@ export default function Home() {
                     <div>
                       <p className="text-xs font-semibold uppercase tracking-[0.18em] text-gold">{person.role}</p>
                       <h3 className="mt-3 font-display text-2xl font-semibold text-navy sm:text-3xl dark:text-white">{person.name}</h3>
-                      <p className="mt-3 text-sm leading-6 text-ink/65 sm:mt-4 sm:text-base sm:leading-7 dark:text-white/65">{person.summary}</p>
+                      <p className="strategist-summary mt-3 text-sm leading-6 text-ink/65 sm:mt-4 sm:text-base sm:leading-7 dark:text-white/65">{person.summary}</p>
                     </div>
-                    <div className="mt-5 grid gap-2 sm:mt-7 sm:gap-3">
+                    <div className="strategist-highlights mt-5 grid gap-2 sm:mt-7 sm:gap-3">
                       {person.highlights.map((highlight) => (
                         <div key={highlight} className="flex items-start gap-3 rounded-lg bg-mist p-3 dark:bg-white/8">
                           <CheckCircle2 className="mt-0.5 shrink-0 text-gold" size={17} />
@@ -572,8 +572,8 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="bg-navy py-16 text-white sm:py-20">
-        <div className="section grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+      <section className="mobile-skip bg-navy py-16 text-white sm:py-20">
+        <div className="mobile-card-rail section grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
           {caseStudies.map(([title, text], index) => (
             <Reveal key={title} delay={index * 0.04} className="rounded-lg border border-white/10 bg-white/[0.06] p-6">
               <BarChart3 className="mb-8 text-gold" />
@@ -596,7 +596,7 @@ export default function Home() {
                 <p className="flex items-start gap-3"><MapPin className="mt-1 text-gold" size={20} /> No. 23/6, First Floor, JSM Complex, D Rajgopal Road, Sanjay Nagar, Bangalore - 560094</p>
               </div>
             </div>
-            <form className="grid gap-4 p-5 sm:grid-cols-2 sm:p-8">
+            <form className="hidden gap-4 p-5 sm:grid sm:grid-cols-2 sm:p-8">
               {["Name", "Company", "Email", "Phone"].map((field) => (
                 <label key={field} className="space-y-2 text-sm font-semibold text-navy dark:text-white">
                   <span>{field}</span>
@@ -643,13 +643,13 @@ export default function Home() {
               GSTIN: 29ALNPP5107B2Z3
             </p>
           </div>
-          <div>
+          <div className="hidden sm:block">
             <h3 className="mb-3 text-sm font-semibold text-navy dark:text-white">Quick Links</h3>
             <div className="space-y-2 text-sm text-ink/60 dark:text-white/58">
               {navItems.slice(0, 5).map(([label, href]) => <a key={label} href={href} className="block hover:text-gold">{label}</a>)}
             </div>
           </div>
-          <div>
+          <div className="hidden sm:block">
             <h3 className="mb-3 text-sm font-semibold text-navy dark:text-white">Services</h3>
             <div className="space-y-2 text-sm text-ink/60 dark:text-white/58">
               <a href="#services" className="block hover:text-gold">Opportunity Development</a>

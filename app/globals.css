@@ -491,7 +491,7 @@ body {
   }
 
   .executive-visual {
-    height: 18.75rem;
+    height: 14.75rem;
     box-shadow: 0 20px 48px rgba(11, 31, 58, 0.14);
   }
 
@@ -519,7 +519,7 @@ body {
 
   .visual-map {
     min-height: auto;
-    padding: 1rem;
+    padding: 0.75rem;
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 0.6rem;
@@ -536,7 +536,7 @@ body {
     position: relative;
     height: auto;
     width: 100%;
-    min-height: 5.5rem;
+    min-height: 4.5rem;
     grid-column: 1 / -1;
     margin-bottom: 0.15rem;
     font-size: 1rem;
@@ -550,7 +550,8 @@ body {
     bottom: auto;
     gap: 0.5rem;
     padding: 0.75rem;
-    font-size: 0.82rem;
+    min-height: 3.9rem;
+    font-size: 0.78rem;
     max-width: none;
   }
 
@@ -568,17 +569,25 @@ body {
     right: 4%;
   }
 
+  .lifecycle-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .lifecycle-grid .lifecycle-card p {
+    display: none;
+  }
+
   .process-line {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .process-step {
-    min-height: 6.5rem;
+    min-height: 4.9rem;
   }
 
   .lifecycle-card {
-    min-height: 9.25rem;
-    padding: 1rem;
+    min-height: 7.75rem;
+    padding: 0.9rem;
   }
 
   .lifecycle-card h3,
@@ -591,6 +600,63 @@ body {
     padding: 0.7rem;
     font-size: 0.76rem;
     line-height: 1.35;
+  }
+
+  .mobile-card-rail {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    padding-bottom: 0.25rem;
+  }
+
+  .mobile-card-rail::-webkit-scrollbar {
+    display: none;
+  }
+
+  .mobile-card-rail > * {
+    flex: 0 0 84%;
+    scroll-snap-align: start;
+  }
+
+  .mobile-card-rail .premium-card {
+    min-height: 16rem;
+  }
+
+  .mobile-icon-rail {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+
+  .mobile-icon-rail::-webkit-scrollbar {
+    display: none;
+  }
+
+  .mobile-icon-rail > div {
+    flex: 0 0 38%;
+    min-height: 6.25rem;
+    scroll-snap-align: start;
+  }
+
+  .mobile-brand-rail {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+
+  .mobile-brand-rail::-webkit-scrollbar {
+    display: none;
+  }
+
+  .mobile-brand-rail .brand-tile {
+    flex: 0 0 42%;
+    scroll-snap-align: start;
   }
 
   .metro-card {
@@ -616,7 +682,7 @@ body {
   }
 
   .founder-card {
-    min-height: 22rem;
+    min-height: 19rem;
   }
 
   .founder-photo {
@@ -647,6 +713,93 @@ body {
   .leadership-point span {
     line-height: 1.45;
   }
+
+  #home {
+    padding-top: 5.25rem;
+  }
+
+  #home .section {
+    gap: 1.35rem;
+    padding-bottom: 2rem;
+  }
+
+  .mobile-skip {
+    display: none;
+  }
+
+  #about,
+  #services,
+  #impact,
+  #founder,
+  #strategists,
+  #contact {
+    padding-top: 3.75rem;
+    padding-bottom: 3.75rem;
+  }
+
+  #strategists .relative.min-h-64 {
+    min-height: 10.5rem;
+  }
+
+  .strategist-summary {
+    display: none;
+  }
+
+  .strategist-highlights > div:nth-child(n + 3) {
+    display: none;
+  }
+
+  .leadership-points > div:nth-child(n + 3) {
+    display: none;
+  }
+
+  #strategists [class*="shadow-soft"] {
+    box-shadow: 0 12px 32px rgba(11, 31, 58, 0.08);
+  }
+
+  #strategists .mobile-card-rail {
+    align-items: stretch;
+  }
+
+  #strategists .mobile-card-rail > * {
+    flex: 0 0 86%;
+  }
+
+  #contact form {
+    gap: 0.75rem;
+    padding: 1rem;
+  }
+
+  #contact input,
+  #contact select,
+  #contact textarea {
+    padding-top: 0.72rem;
+    padding-bottom: 0.72rem;
+  }
+
+  footer {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  }
+
+  footer .section:first-child {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+
+  footer .section:first-child > div:first-child,
+  footer .section:first-child > div:last-child {
+    grid-column: 1 / -1;
+  }
+
+  footer .space-y-2 {
+    display: grid;
+    gap: 0.45rem;
+  }
+
+  footer .section.mt-9 {
+    margin-top: 1.5rem;
+  }
 }
 
 @media (max-width: 380px) {
@@ -655,7 +808,7 @@ body {
   }
 
   .executive-visual {
-    height: 17.75rem;
+    height: 14rem;
   }
 
   .brand-tile {
