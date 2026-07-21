@@ -118,14 +118,14 @@ const assetBase = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
 const strategists = [
   {
     name: "Vinay Murudi",
-    role: "Startup & Growth Strategist",
+    role: "Technology & Growth Strategy Leader",
     image: `${assetBase}/images/team-vinay-murudi.jpeg`,
-    summary: "Entrepreneur, EdTech CEO and IIM Bangalore MBA with deep experience in startup strategy, fundraising and scalable B2B2C growth models.",
+    summary: "A 20+ year technology and growth leader with Huawei cloud platform leadership, enterprise program depth and a strong CXO, startup and institutional network.",
     highlights: [
-      "Co-Founder & CEO, Arivu Learning / myPAL",
+      "Senior Project Manager, Huawei Technologies India",
+      "Led cloud platform teams across OpenStack, Docker and Kubernetes",
       "MBA, IIM Bangalore",
-      "Raised 8Cr+ and drove 4Cr+ revenue",
-      "Startup strategy, sales and emerging-market growth"
+      "Program management, R&D, business strategy and customer engagement"
     ]
   },
   {
@@ -134,8 +134,8 @@ const strategists = [
     image: `${assetBase}/images/team-shivaprasad-hiremath.jpeg`,
     summary: "Co-founder and operator focused on democratizing EdTech access in Bharat through networks, sales systems and micro-entrepreneurship.",
     highlights: [
-      "Co-Founder, myPAL",
       "Bharat and rural education access",
+      "B2B sales and B2C sales execution",
       "Network of achievers, founders and local operators",
       "Sales, community building and micro-entrepreneur models"
     ]
