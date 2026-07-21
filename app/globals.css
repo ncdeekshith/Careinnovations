@@ -815,3 +815,7 @@ body {
     font-size: 0.76rem;
   }
 }
+
+html {
+  text-rendering: optimizeLegibility;
+}
