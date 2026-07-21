@@ -148,16 +148,16 @@ export default function Home() {
   return (
     <main className="overflow-hidden bg-white text-ink dark:bg-[#071528] dark:text-white">
       <header className="fixed inset-x-0 top-0 z-50 border-b border-navy/10 bg-white/86 backdrop-blur-xl dark:border-white/10 dark:bg-[#071528]/84">
-        <nav className="section flex h-20 items-center justify-between">
+        <nav className="section flex h-16 items-center justify-between sm:h-20">
           <a href="#home" className="flex items-center gap-3" aria-label="Care Innovations home">
-            <span className="grid h-11 w-11 place-items-center rounded-lg bg-navy text-lg font-semibold text-gold shadow-sm dark:bg-white dark:text-navy">
+            <span className="grid h-10 w-10 shrink-0 place-items-center rounded-lg bg-navy text-base font-semibold text-gold shadow-sm sm:h-11 sm:w-11 sm:text-lg dark:bg-white dark:text-navy">
               CI
             </span>
             <span>
-              <span className="block font-display text-lg font-semibold leading-tight text-navy dark:text-white">
+              <span className="block font-display text-base font-semibold leading-tight text-navy sm:text-lg dark:text-white">
                 Care Innovations
               </span>
-              <span className="block text-xs font-medium text-ink/55 dark:text-white/55">
+              <span className="hidden text-xs font-medium text-ink/55 min-[380px]:block dark:text-white/55">
                 Strategic Growth Partner
               </span>
             </span>
@@ -209,21 +209,21 @@ export default function Home() {
         )}
       </header>
 
-      <section id="home" className="relative pt-28">
+      <section id="home" className="relative pt-24 sm:pt-28">
         <div className="absolute inset-0 -z-10 bg-[linear-gradient(180deg,#F8F9FA_0%,#FFFFFF_50%,#F8F9FA_100%)] dark:bg-[linear-gradient(180deg,#071528_0%,#0B1F3A_58%,#071528_100%)]" />
-        <div className="section grid min-h-[calc(100vh-7rem)] items-center gap-12 pb-12 lg:grid-cols-[0.92fr_1.08fr]">
+        <div className="section grid items-center gap-8 pb-10 sm:gap-12 sm:pb-12 lg:min-h-[calc(100vh-7rem)] lg:grid-cols-[0.92fr_1.08fr]">
           <Reveal>
-            <div className="mb-7 inline-flex items-center gap-3 rounded-full border border-navy/10 bg-white/80 px-4 py-2 text-xs font-semibold uppercase tracking-[0.2em] text-navy/70 shadow-sm dark:border-white/10 dark:bg-white/8 dark:text-white/70">
+            <div className="mb-5 inline-flex items-center gap-3 rounded-full border border-navy/10 bg-white/80 px-3 py-2 text-[0.68rem] font-semibold uppercase tracking-[0.16em] text-navy/70 shadow-sm sm:mb-7 sm:px-4 sm:text-xs sm:tracking-[0.2em] dark:border-white/10 dark:bg-white/8 dark:text-white/70">
               <span className="h-2 w-2 rounded-full bg-gold" />
               Bengaluru | Since 2001
             </div>
             <h1 className="heading-xl max-w-5xl text-balance">
               Growth opportunities, developed strategically.
             </h1>
-            <p className="mt-7 max-w-xl text-xl leading-8 text-ink/68 dark:text-white/68">
+            <p className="mt-5 max-w-xl text-lg leading-7 text-ink/68 sm:mt-7 sm:text-xl sm:leading-8 dark:text-white/68">
               Care Innovations helps companies find the right opportunities, build the right relationships, and move deals forward.
             </p>
-            <div className="mt-9 flex flex-col gap-3 sm:flex-row">
+            <div className="mt-7 flex flex-col gap-3 sm:mt-9 sm:flex-row">
               <a href="#contact" className="btn-primary">
                 Book a Strategy Call <ArrowRight size={17} />
               </a>
@@ -232,11 +232,11 @@ export default function Home() {
               </a>
             </div>
 
-            <div className="mt-10 grid grid-cols-2 gap-3 sm:grid-cols-4">
+            <div className="mt-7 grid grid-cols-4 gap-2 sm:mt-10 sm:gap-3">
               {proof.map(([value, label]) => (
-                <div key={label} className="rounded-lg border border-navy/10 bg-white/80 p-4 text-center shadow-sm dark:border-white/10 dark:bg-white/8">
-                  <div className="font-display text-3xl font-semibold text-navy dark:text-white">{value}</div>
-                  <div className="mt-1 text-xs font-semibold uppercase tracking-[0.14em] text-ink/45 dark:text-white/45">
+                <div key={label} className="rounded-lg border border-navy/10 bg-white/80 p-2 text-center shadow-sm sm:p-4 dark:border-white/10 dark:bg-white/8">
+                  <div className="font-display text-xl font-semibold text-navy sm:text-3xl dark:text-white">{value}</div>
+                  <div className="mt-1 text-[0.58rem] font-semibold uppercase tracking-[0.08em] text-ink/45 sm:text-xs sm:tracking-[0.14em] dark:text-white/45">
                     {label}
                   </div>
                 </div>
@@ -274,11 +274,11 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="py-10">
+      <section className="py-8 sm:py-10">
         <div className="section">
-          <Reveal className="grid gap-3 rounded-lg border border-navy/10 bg-white p-3 shadow-soft sm:grid-cols-3 lg:grid-cols-6 dark:border-white/10 dark:bg-white/[0.06]">
+          <Reveal className="grid grid-cols-2 gap-2 rounded-lg border border-navy/10 bg-white p-2 shadow-soft sm:grid-cols-3 sm:gap-3 sm:p-3 lg:grid-cols-6 dark:border-white/10 dark:bg-white/[0.06]">
             {["Identify", "Qualify", "Position", "Engage", "Negotiate", "Scale"].map((item) => (
-              <div key={item} className="rounded-md bg-mist px-4 py-4 text-center text-sm font-semibold text-navy/62 dark:bg-white/8 dark:text-white/62">
+              <div key={item} className="rounded-md bg-mist px-3 py-3 text-center text-xs font-semibold text-navy/62 sm:px-4 sm:py-4 sm:text-sm dark:bg-white/8 dark:text-white/62">
                 {item}
               </div>
             ))}
@@ -286,7 +286,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="about" className="py-24">
+      <section id="about" className="py-16 sm:py-20 lg:py-24">
         <div className="section grid gap-10 lg:grid-cols-[0.85fr_1.15fr] lg:items-center">
           <Reveal>
             <p className="eyebrow mb-4">The Firm</p>
@@ -316,12 +316,12 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="pb-24">
+      <section className="pb-16 sm:pb-20 lg:pb-24">
         <div className="section">
           <Reveal className="grid overflow-hidden rounded-lg border border-navy/10 bg-white shadow-soft lg:grid-cols-[0.9fr_1.1fr] dark:border-white/10 dark:bg-white/[0.06]">
-            <div className="bg-navy p-8 text-white sm:p-10">
+            <div className="bg-navy p-6 text-white sm:p-10">
               <p className="eyebrow mb-4">Project Lifecycle</p>
-              <h2 className="font-display text-3xl font-semibold tracking-normal sm:text-4xl">From opportunity discovery to payment collection.</h2>
+              <h2 className="font-display text-2xl font-semibold tracking-normal sm:text-4xl">From opportunity discovery to payment collection.</h2>
               <p className="mt-5 text-base leading-7 text-white/68">
                 The work spans market requirements, tender coordination, supply and installation oversight, execution support and timely collection.
               </p>
@@ -344,50 +344,50 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="bg-mist py-16 dark:bg-white/[0.04]">
+      <section className="bg-mist py-14 sm:py-16 dark:bg-white/[0.04]">
         <div className="section grid gap-5 md:grid-cols-2">
           {[
             ["Mission", "Strategic consulting that creates lasting partnerships and sustainable growth."],
             ["Vision", "A trusted growth partner for relationship-driven business development."]
           ].map(([title, text], index) => (
-            <Reveal key={title} delay={index * 0.04} className="premium-card flex min-h-48 flex-col justify-between p-7">
+            <Reveal key={title} delay={index * 0.04} className="premium-card flex min-h-44 flex-col justify-between p-5 sm:min-h-48 sm:p-7">
               <ShieldCheck className="text-gold" size={36} />
               <div>
-                <h2 className="font-display text-4xl font-semibold text-navy dark:text-white">{title}</h2>
-                <p className="mt-4 text-lg leading-7 text-ink/65 dark:text-white/65">{text}</p>
+                <h2 className="font-display text-3xl font-semibold text-navy sm:text-4xl dark:text-white">{title}</h2>
+                <p className="mt-3 text-base leading-7 text-ink/65 sm:mt-4 sm:text-lg dark:text-white/65">{text}</p>
               </div>
             </Reveal>
           ))}
         </div>
       </section>
 
-      <section id="services" className="py-24">
+      <section id="services" className="py-16 sm:py-20 lg:py-24">
         <div className="section">
           <Reveal className="mx-auto max-w-3xl text-center">
             <p className="eyebrow mb-4">Capabilities</p>
             <h2 className="heading-lg text-balance">From opportunity signal to commercial movement.</h2>
           </Reveal>
 
-          <div className="mt-12 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+          <div className="mt-9 grid gap-4 sm:mt-12 sm:gap-5 md:grid-cols-2 lg:grid-cols-3">
             {services.map(([Icon, title, text], index) => (
-              <Reveal key={title as string} delay={index * 0.03} className="premium-card group min-h-64">
-                <div className="mb-8 flex items-center justify-between">
-                  <div className="grid h-12 w-12 place-items-center rounded-lg bg-navy text-gold transition group-hover:bg-gold group-hover:text-navy dark:bg-white dark:text-navy">
-                    <Icon size={24} />
+              <Reveal key={title as string} delay={index * 0.03} className="premium-card group min-h-0 p-5 sm:min-h-64 sm:p-6">
+                <div className="mb-5 flex items-center justify-between sm:mb-8">
+                  <div className="grid h-10 w-10 place-items-center rounded-lg bg-navy text-gold transition group-hover:bg-gold group-hover:text-navy sm:h-12 sm:w-12 dark:bg-white dark:text-navy">
+                    <Icon size={22} />
                   </div>
                   <span className="text-xs font-semibold uppercase tracking-[0.18em] text-ink/35 dark:text-white/35">
                     0{index + 1}
                   </span>
                 </div>
-                <h3 className="font-display text-2xl font-semibold text-navy dark:text-white">{title as string}</h3>
-                <p className="mt-4 text-base leading-7 text-ink/62 dark:text-white/62">{text as string}</p>
+                <h3 className="font-display text-xl font-semibold text-navy sm:text-2xl dark:text-white">{title as string}</h3>
+                <p className="mt-3 text-sm leading-6 text-ink/62 sm:mt-4 sm:text-base sm:leading-7 dark:text-white/62">{text as string}</p>
               </Reveal>
             ))}
           </div>
         </div>
       </section>
 
-      <section className="bg-navy py-24 text-white">
+      <section className="bg-navy py-16 text-white sm:py-20 lg:py-24">
         <div className="section">
           <Reveal className="grid gap-8 lg:grid-cols-[0.85fr_1.15fr] lg:items-end">
             <div>
@@ -408,14 +408,14 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="impact" className="py-24">
+      <section id="impact" className="py-16 sm:py-20 lg:py-24">
         <div className="section">
           <Reveal className="grid gap-8 lg:grid-cols-[0.8fr_1.2fr] lg:items-end">
             <div>
               <p className="eyebrow mb-4">Partnerships</p>
               <h2 className="heading-lg text-balance">Trusted by leading organizations across industrial, mobility, insurance and networking segments.</h2>
             </div>
-            <div className="grid grid-cols-2 gap-3 md:grid-cols-3">
+            <div className="grid grid-cols-2 gap-2 sm:gap-3 md:grid-cols-3">
               {partners.map((partner) => (
                 <div key={partner} className="brand-tile">
                   {partner}
@@ -424,17 +424,17 @@ export default function Home() {
             </div>
           </Reveal>
 
-          <Reveal delay={0.08} className="mt-14 overflow-hidden rounded-lg border border-navy/10 bg-white shadow-premium lg:grid lg:grid-cols-[1fr_1.25fr] dark:border-white/10 dark:bg-white/[0.06]">
-            <div className="bg-mist p-8 sm:p-10 dark:bg-white/[0.04]">
+          <Reveal delay={0.08} className="mt-10 overflow-hidden rounded-lg border border-navy/10 bg-white shadow-premium sm:mt-14 lg:grid lg:grid-cols-[1fr_1.25fr] dark:border-white/10 dark:bg-white/[0.06]">
+            <div className="bg-mist p-6 sm:p-10 dark:bg-white/[0.04]">
               <p className="eyebrow mb-4">Belden India</p>
-              <h3 className="font-display text-3xl font-semibold tracking-normal text-navy sm:text-4xl dark:text-white">
+              <h3 className="font-display text-2xl font-semibold tracking-normal text-navy sm:text-4xl dark:text-white">
                 Pan-India business development for a networking major.
               </h3>
               <p className="mt-5 text-base leading-7 text-ink/66 dark:text-white/66">
                 Over the last three years, Care Innovations has helped create significant breakthroughs for Belden networking solutions across major metro infrastructure opportunities.
               </p>
             </div>
-            <div className="grid gap-3 p-4 sm:grid-cols-3 sm:p-5">
+            <div className="metro-grid grid gap-3 p-3 sm:grid-cols-3 sm:p-5">
               {metroWins.map(([title, text], index) => (
                 <div key={title} className="metro-card">
                   <MapPin size={22} />
@@ -448,13 +448,13 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="py-24">
+      <section className="py-16 sm:py-20 lg:py-24">
         <div className="section">
           <Reveal className="mx-auto max-w-3xl text-center">
             <p className="eyebrow mb-4">Outcomes</p>
             <h2 className="heading-lg text-balance">What improves when strategy and execution work together.</h2>
           </Reveal>
-          <div className="mt-12 grid gap-5 md:grid-cols-4">
+          <div className="mt-9 grid gap-4 sm:mt-12 sm:gap-5 md:grid-cols-4">
             {outcomes.map(([title, text], index) => (
               <Reveal key={title} delay={index * 0.04} className="premium-card text-center">
                 <div className="mx-auto mb-6 grid h-12 w-12 place-items-center rounded-full bg-gold/15 text-sm font-bold text-gold">
@@ -468,13 +468,13 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="process" className="bg-mist py-16 dark:bg-white/[0.04]">
+      <section id="process" className="bg-mist py-14 sm:py-16 dark:bg-white/[0.04]">
         <div className="section">
           <Reveal className="mx-auto max-w-3xl text-center">
             <p className="eyebrow mb-4">Approach</p>
             <h2 className="font-display text-3xl font-semibold tracking-normal text-navy sm:text-4xl lg:text-5xl dark:text-white">A clear growth development path.</h2>
           </Reveal>
-          <Reveal delay={0.08} className="mt-10 rounded-lg border border-navy/10 bg-white p-4 shadow-soft dark:border-white/10 dark:bg-white/[0.06]">
+          <Reveal delay={0.08} className="mt-8 rounded-lg border border-navy/10 bg-white p-3 shadow-soft sm:mt-10 sm:p-4 dark:border-white/10 dark:bg-white/[0.06]">
             <div className="process-line">
               {processSteps.map(([number, title]) => (
                 <div key={title} className="process-step">
@@ -487,8 +487,8 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="founder" className="py-24">
-        <div className="section grid gap-10 lg:grid-cols-[0.8fr_1.2fr] lg:items-center">
+      <section id="founder" className="py-16 sm:py-20 lg:py-24">
+        <div className="section grid gap-7 sm:gap-10 lg:grid-cols-[0.8fr_1.2fr] lg:items-center">
           <Reveal>
             <div className="founder-card">
               <Image
@@ -507,27 +507,27 @@ export default function Home() {
           <Reveal delay={0.08}>
             <p className="eyebrow mb-4">Leadership</p>
             <h2 className="heading-lg text-balance">25+ years of institutional access, tendering knowledge and execution discipline.</h2>
-            <div className="mt-8 grid gap-3 sm:grid-cols-2">
+            <div className="leadership-points mt-6 grid gap-2 sm:mt-8 sm:grid-cols-2 sm:gap-3">
               {[
                 "Independent marketing and liaisoning consultancy",
                 "Corporate and government collaboration",
                 "Tendering, supply and installation oversight",
                 "Payment collection follow-through"
               ].map((item) => (
-                <div key={item} className="flex items-center gap-3 rounded-lg border border-navy/10 p-4 dark:border-white/10">
+                <div key={item} className="leadership-point flex items-center gap-3 rounded-lg border border-navy/10 p-3 sm:p-4 dark:border-white/10">
                   <CheckCircle2 className="shrink-0 text-gold" size={19} />
                   <span className="text-sm font-semibold text-ink/70 dark:text-white/70">{item}</span>
                 </div>
               ))}
             </div>
-            <blockquote className="mt-8 border-l-4 border-gold pl-6 font-display text-2xl font-medium leading-snug text-navy dark:text-white">
+            <blockquote className="mt-7 border-l-4 border-gold pl-5 font-display text-xl font-medium leading-snug text-navy sm:mt-8 sm:pl-6 sm:text-2xl dark:text-white">
               &quot;Growth happens when opportunities meet the right relationships and strategic execution.&quot;
             </blockquote>
           </Reveal>
         </div>
       </section>
 
-      <section id="strategists" className="bg-mist py-20 dark:bg-white/[0.04]">
+      <section id="strategists" className="bg-mist py-16 sm:py-20 dark:bg-white/[0.04]">
         <div className="section">
           <Reveal className="mx-auto max-w-3xl text-center">
             <p className="eyebrow mb-4">Strategists</p>
@@ -536,11 +536,11 @@ export default function Home() {
             </h2>
           </Reveal>
 
-          <div className="mt-12 grid gap-6 lg:grid-cols-2">
+          <div className="mt-9 grid gap-5 sm:mt-12 sm:gap-6 lg:grid-cols-2">
             {strategists.map((person, index) => (
               <Reveal key={person.name} delay={index * 0.06} className="overflow-hidden rounded-lg border border-navy/10 bg-white shadow-soft transition hover:-translate-y-1 hover:shadow-premium dark:border-white/10 dark:bg-white/[0.06]">
                 <div className="grid sm:grid-cols-[0.9fr_1.1fr]">
-                  <div className="relative min-h-80 overflow-hidden bg-navy">
+                  <div className="relative min-h-64 overflow-hidden bg-navy sm:min-h-80">
                     <Image
                       src={person.image}
                       alt={`${person.name}, ${person.role}`}
@@ -550,13 +550,13 @@ export default function Home() {
                     />
                     <div className="absolute inset-0 bg-[linear-gradient(180deg,transparent_48%,rgba(11,31,58,0.58)_100%)]" />
                   </div>
-                  <div className="flex flex-col justify-between p-7">
+                  <div className="flex flex-col justify-between p-5 sm:p-7">
                     <div>
                       <p className="text-xs font-semibold uppercase tracking-[0.18em] text-gold">{person.role}</p>
-                      <h3 className="mt-3 font-display text-3xl font-semibold text-navy dark:text-white">{person.name}</h3>
-                      <p className="mt-4 text-base leading-7 text-ink/65 dark:text-white/65">{person.summary}</p>
+                      <h3 className="mt-3 font-display text-2xl font-semibold text-navy sm:text-3xl dark:text-white">{person.name}</h3>
+                      <p className="mt-3 text-sm leading-6 text-ink/65 sm:mt-4 sm:text-base sm:leading-7 dark:text-white/65">{person.summary}</p>
                     </div>
-                    <div className="mt-7 grid gap-3">
+                    <div className="mt-5 grid gap-2 sm:mt-7 sm:gap-3">
                       {person.highlights.map((highlight) => (
                         <div key={highlight} className="flex items-start gap-3 rounded-lg bg-mist p-3 dark:bg-white/8">
                           <CheckCircle2 className="mt-0.5 shrink-0 text-gold" size={17} />
@@ -572,7 +572,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="bg-navy py-20 text-white">
+      <section className="bg-navy py-16 text-white sm:py-20">
         <div className="section grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
           {caseStudies.map(([title, text], index) => (
             <Reveal key={title} delay={index * 0.04} className="rounded-lg border border-white/10 bg-white/[0.06] p-6">
@@ -584,14 +584,14 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="contact" className="py-24">
+      <section id="contact" className="py-16 sm:py-20 lg:py-24">
         <div className="section">
           <Reveal className="grid overflow-hidden rounded-lg border border-navy/10 bg-white shadow-premium lg:grid-cols-[0.85fr_1.15fr] dark:border-white/10 dark:bg-white/[0.06]">
-            <div className="bg-navy p-8 text-white sm:p-12">
+            <div className="bg-navy p-6 text-white sm:p-12">
               <p className="eyebrow mb-4">Contact</p>
-              <h2 className="font-display text-4xl font-semibold sm:text-5xl">Start a growth conversation.</h2>
-              <div className="mt-10 space-y-4 text-white/72">
-                <p className="flex items-center gap-3"><Mail className="text-gold" size={20} /> care.aravind@gmail.com</p>
+              <h2 className="font-display text-3xl font-semibold sm:text-5xl">Start a growth conversation.</h2>
+              <div className="mt-7 space-y-4 text-sm leading-6 text-white/72 sm:mt-10 sm:text-base">
+                <p className="flex items-center gap-3"><Mail className="text-gold" size={20} /> <span className="break-all">care.aravind@gmail.com</span></p>
                 <p className="flex items-center gap-3"><Phone className="text-gold" size={20} /> Strategy call by appointment</p>
                 <p className="flex items-start gap-3"><MapPin className="mt-1 text-gold" size={20} /> No. 23/6, First Floor, JSM Complex, D Rajgopal Road, Sanjay Nagar, Bangalore - 560094</p>
               </div>
