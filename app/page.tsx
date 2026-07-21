@@ -35,6 +35,7 @@ import { ThemeToggle } from "@/components/ThemeToggle";
 const navItems = [
   ["Firm", "#about"],
   ["Services", "#services"],
+  ["Impact", "#impact"],
   ["Approach", "#process"],
   ["Team", "#strategists"],
   ["Contact", "#contact"]
@@ -48,12 +49,12 @@ const proof = [
 ];
 
 const services = [
-  [Search, "Market Research", "Find priority sectors and accounts."],
-  [Target, "Opportunity Development", "Qualify, nurture, and advance deals."],
-  [Handshake, "Client Relationships", "Build trust with decision-makers."],
-  [BriefcaseBusiness, "BD Consulting", "Sharpen positioning and outreach."],
-  [CircleDollarSign, "Sales Support", "Support proposals and closure."],
-  [TrendingUp, "Growth Advisory", "Plan expansion with discipline."]
+  [Search, "Market Requirements", "Translate product segments into actionable government demand."],
+  [Target, "Opportunity Development", "Identify qualified opportunities across Central and State departments."],
+  [Handshake, "Institutional Liaisoning", "Facilitate corporate, department and stakeholder collaboration."],
+  [BriefcaseBusiness, "Tender Management", "Support tendering, documentation, positioning and bid movement."],
+  [CircleDollarSign, "Execution Support", "Coordinate supply, installation, execution and payment follow-through."],
+  [TrendingUp, "Growth Advisory", "Build durable accounts, relationships and expansion plans."]
 ];
 
 const industries = [
@@ -83,11 +84,33 @@ const outcomes = [
   ["Strategic Clarity", "Clearer priorities for growth teams."]
 ];
 
+const lifecycle = [
+  [Search, "Identify", "Opportunities across product segments and government departments."],
+  [Target, "Shape", "Market requirements, account priorities and pursuit strategy."],
+  [BriefcaseBusiness, "Tender", "Bid support, liaisoning and process coordination."],
+  [CheckCircle2, "Execute", "Supply, installation, execution and payment collection follow-through."]
+];
+
+const partners = [
+  "Belden India Pvt. Ltd.",
+  "Sintex Industries Ltd.",
+  "Bajaj Auto Ltd.",
+  "Bajaj Allianz",
+  "EPP Ltd.",
+  "RCCL"
+];
+
+const metroWins = [
+  ["Gujarat Metro", "Networking solution breakthrough"],
+  ["Chennai Metro", "Public infrastructure opportunity"],
+  ["Bengaluru Metro", "Institutional relationship momentum"]
+];
+
 const caseStudies = [
-  ["Market Expansion", "New sector entry"],
-  ["Partnerships", "Long-term alliances"],
-  ["Lead Development", "Qualified pipeline"],
-  ["Growth Consulting", "Sharper positioning"]
+  ["25+ Years", "Independent marketing and liaisoning consultancy"],
+  ["Pan India", "Business development consulting for Belden India"],
+  ["3 Metros", "Gujarat, Chennai and Bengaluru breakthroughs"],
+  ["End-to-End", "Opportunity, tender, execution and collection support"]
 ];
 
 const assetBase = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
@@ -267,15 +290,18 @@ export default function Home() {
         <div className="section grid gap-10 lg:grid-cols-[0.85fr_1.15fr] lg:items-center">
           <Reveal>
             <p className="eyebrow mb-4">The Firm</p>
-            <h2 className="heading-lg text-balance">A business development partner, not a lead list vendor.</h2>
+            <h2 className="heading-lg text-balance">Independent marketing and liaisoning consultants for complex public-sector growth.</h2>
+            <p className="mt-6 max-w-xl text-lg leading-8 text-ink/68 dark:text-white/68">
+              Care Innovations facilitates collaboration between corporate organizations and Central and State Government departments, carrying opportunities from early market signal to commercial closure.
+            </p>
           </Reveal>
           <Reveal delay={0.08}>
             <div className="visual-map">
               {[
-                ["Market Insight", Search],
-                ["Relationship Access", Users],
-                ["Opportunity Momentum", TrendingUp],
-                ["Closure Support", ShieldCheck]
+                ["Government Departments", Landmark],
+                ["Corporate Organizations", Building2],
+                ["Tendering Process", BriefcaseBusiness],
+                ["Execution Closure", CheckCircle2]
               ].map(([label, Icon], index) => (
                 <div key={label as string} className={`visual-node visual-node-${index + 1}`}>
                   <Icon size={24} />
@@ -285,6 +311,34 @@ export default function Home() {
               <div className="visual-center">
                 <span>Care Innovations</span>
               </div>
+            </div>
+          </Reveal>
+        </div>
+      </section>
+
+      <section className="pb-24">
+        <div className="section">
+          <Reveal className="grid overflow-hidden rounded-lg border border-navy/10 bg-white shadow-soft lg:grid-cols-[0.9fr_1.1fr] dark:border-white/10 dark:bg-white/[0.06]">
+            <div className="bg-navy p-8 text-white sm:p-10">
+              <p className="eyebrow mb-4">Project Lifecycle</p>
+              <h2 className="font-display text-3xl font-semibold tracking-normal sm:text-4xl">From opportunity discovery to payment collection.</h2>
+              <p className="mt-5 text-base leading-7 text-white/68">
+                The work spans market requirements, tender coordination, supply and installation oversight, execution support and timely collection.
+              </p>
+            </div>
+            <div className="grid gap-3 p-4 sm:grid-cols-2 sm:p-5">
+              {lifecycle.map(([Icon, title, text], index) => (
+                <Reveal key={title as string} delay={index * 0.035} className="lifecycle-card">
+                  <div className="flex items-center justify-between">
+                    <div className="grid h-11 w-11 place-items-center rounded-lg bg-gold/15 text-gold">
+                      <Icon size={22} />
+                    </div>
+                    <span>0{index + 1}</span>
+                  </div>
+                  <h3>{title as string}</h3>
+                  <p>{text as string}</p>
+                </Reveal>
+              ))}
             </div>
           </Reveal>
         </div>
@@ -354,6 +408,46 @@ export default function Home() {
         </div>
       </section>
 
+      <section id="impact" className="py-24">
+        <div className="section">
+          <Reveal className="grid gap-8 lg:grid-cols-[0.8fr_1.2fr] lg:items-end">
+            <div>
+              <p className="eyebrow mb-4">Partnerships</p>
+              <h2 className="heading-lg text-balance">Trusted by leading organizations across industrial, mobility, insurance and networking segments.</h2>
+            </div>
+            <div className="grid grid-cols-2 gap-3 md:grid-cols-3">
+              {partners.map((partner) => (
+                <div key={partner} className="brand-tile">
+                  {partner}
+                </div>
+              ))}
+            </div>
+          </Reveal>
+
+          <Reveal delay={0.08} className="mt-14 overflow-hidden rounded-lg border border-navy/10 bg-white shadow-premium lg:grid lg:grid-cols-[1fr_1.25fr] dark:border-white/10 dark:bg-white/[0.06]">
+            <div className="bg-mist p-8 sm:p-10 dark:bg-white/[0.04]">
+              <p className="eyebrow mb-4">Belden India</p>
+              <h3 className="font-display text-3xl font-semibold tracking-normal text-navy sm:text-4xl dark:text-white">
+                Pan-India business development for a networking major.
+              </h3>
+              <p className="mt-5 text-base leading-7 text-ink/66 dark:text-white/66">
+                Over the last three years, Care Innovations has helped create significant breakthroughs for Belden networking solutions across major metro infrastructure opportunities.
+              </p>
+            </div>
+            <div className="grid gap-3 p-4 sm:grid-cols-3 sm:p-5">
+              {metroWins.map(([title, text], index) => (
+                <div key={title} className="metro-card">
+                  <MapPin size={22} />
+                  <span>0{index + 1}</span>
+                  <h4>{title}</h4>
+                  <p>{text}</p>
+                </div>
+              ))}
+            </div>
+          </Reveal>
+        </div>
+      </section>
+
       <section className="py-24">
         <div className="section">
           <Reveal className="mx-auto max-w-3xl text-center">
@@ -397,24 +491,28 @@ export default function Home() {
         <div className="section grid gap-10 lg:grid-cols-[0.8fr_1.2fr] lg:items-center">
           <Reveal>
             <div className="founder-card">
-              <div className="grid h-28 w-28 place-items-center rounded-full border border-white/18 bg-white/10 text-4xl font-semibold text-gold">
-                AP
-              </div>
-              <div>
-                <p className="text-sm font-semibold uppercase tracking-[0.22em] text-gold">Founder & CEO</p>
-                <h2 className="mt-2 font-display text-4xl font-semibold text-white">Aravind Patil</h2>
+              <Image
+                src={`${assetBase}/images/aravind-gouda-patil-ceo.jpeg`}
+                alt="Aravind Gouda Patil, Founder and CEO of Care Innovations"
+                width={600}
+                height={760}
+                className="founder-photo"
+              />
+              <div className="founder-caption">
+                <p>Founder & CEO</p>
+                <h2>Aravind Gouda Patil</h2>
               </div>
             </div>
           </Reveal>
           <Reveal delay={0.08}>
             <p className="eyebrow mb-4">Leadership</p>
-            <h2 className="heading-lg text-balance">25+ years of business consulting experience.</h2>
+            <h2 className="heading-lg text-balance">25+ years of institutional access, tendering knowledge and execution discipline.</h2>
             <div className="mt-8 grid gap-3 sm:grid-cols-2">
               {[
-                "Strategic advisor",
-                "Business consulting expert",
-                "MBA, ITM Chennai",
-                "BA, Karnataka University"
+                "Independent marketing and liaisoning consultancy",
+                "Corporate and government collaboration",
+                "Tendering, supply and installation oversight",
+                "Payment collection follow-through"
               ].map((item) => (
                 <div key={item} className="flex items-center gap-3 rounded-lg border border-navy/10 p-4 dark:border-white/10">
                   <CheckCircle2 className="shrink-0 text-gold" size={19} />
@@ -495,7 +593,7 @@ export default function Home() {
               <div className="mt-10 space-y-4 text-white/72">
                 <p className="flex items-center gap-3"><Mail className="text-gold" size={20} /> care.aravind@gmail.com</p>
                 <p className="flex items-center gap-3"><Phone className="text-gold" size={20} /> Strategy call by appointment</p>
-                <p className="flex items-center gap-3"><MapPin className="text-gold" size={20} /> Bengaluru, India</p>
+                <p className="flex items-start gap-3"><MapPin className="mt-1 text-gold" size={20} /> No. 23/6, First Floor, JSM Complex, D Rajgopal Road, Sanjay Nagar, Bangalore - 560094</p>
               </div>
             </div>
             <form className="grid gap-4 p-5 sm:grid-cols-2 sm:p-8">
@@ -529,20 +627,26 @@ export default function Home() {
       </section>
 
       <footer className="border-t border-navy/10 bg-white py-10 dark:border-white/10 dark:bg-[#071528]">
-        <div className="section grid gap-8 md:grid-cols-[1fr_auto_auto_auto] md:items-start">
+        <div className="section grid gap-8 lg:grid-cols-[1.15fr_auto_auto_1fr] lg:items-start">
           <div>
             <div className="flex items-center gap-3">
               <span className="grid h-10 w-10 place-items-center rounded-lg bg-navy text-sm font-semibold text-gold dark:bg-white dark:text-navy">CI</span>
-              <span className="font-display text-lg font-semibold text-navy dark:text-white">Care Innovations</span>
+              <span>
+                <span className="block font-display text-lg font-semibold leading-tight text-navy dark:text-white">Care Innovations</span>
+                <span className="block text-xs font-semibold uppercase tracking-[0.16em] text-gold">Protection Perpetuated</span>
+              </span>
             </div>
             <p className="mt-4 max-w-sm text-sm leading-6 text-ink/60 dark:text-white/58">
-              Strategic opportunity development for sustainable growth.
+              Independent marketing and liaisoning consultancy for sustainable institutional growth.
+            </p>
+            <p className="mt-3 text-xs font-semibold uppercase tracking-[0.14em] text-ink/42 dark:text-white/42">
+              GSTIN: 29ALNPP5107B2Z3
             </p>
           </div>
           <div>
             <h3 className="mb-3 text-sm font-semibold text-navy dark:text-white">Quick Links</h3>
             <div className="space-y-2 text-sm text-ink/60 dark:text-white/58">
-              {navItems.slice(0, 4).map(([label, href]) => <a key={label} href={href} className="block hover:text-gold">{label}</a>)}
+              {navItems.slice(0, 5).map(([label, href]) => <a key={label} href={href} className="block hover:text-gold">{label}</a>)}
             </div>
           </div>
           <div>
@@ -556,6 +660,9 @@ export default function Home() {
           <div>
             <h3 className="mb-3 text-sm font-semibold text-navy dark:text-white">Contact</h3>
             <a href="mailto:care.aravind@gmail.com" className="block text-sm text-ink/60 hover:text-gold dark:text-white/58">care.aravind@gmail.com</a>
+            <p className="mt-3 max-w-xs text-sm leading-6 text-ink/60 dark:text-white/58">
+              No. 23/6, First Floor, JSM Complex, D Rajgopal Road, Sanjay Nagar, Bangalore - 560094
+            </p>
             <a href="https://www.linkedin.com/" aria-label="LinkedIn" className="mt-4 inline-flex h-10 w-10 items-center justify-center rounded-full border border-navy/10 text-navy hover:border-gold hover:text-gold dark:border-white/10 dark:text-white">
               <Linkedin size={18} />
             </a>

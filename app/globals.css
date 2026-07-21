@@ -234,18 +234,135 @@ body {
   font-size: 1rem;
 }
 
+.lifecycle-card {
+  display: flex;
+  min-height: 13.5rem;
+  flex-direction: column;
+  justify-content: space-between;
+  border-radius: 8px;
+  background: #f8f9fa;
+  padding: 1.25rem;
+}
+
+.lifecycle-card span,
+.metro-card span {
+  color: rgba(11, 31, 58, 0.36);
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+}
+
+.lifecycle-card h3,
+.metro-card h4 {
+  color: #0b1f3a;
+  font-family: var(--font-plex);
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.lifecycle-card p,
+.metro-card p {
+  color: rgba(44, 44, 44, 0.64);
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.brand-tile {
+  display: grid;
+  min-height: 5.75rem;
+  place-items: center;
+  border: 1px solid rgba(11, 31, 58, 0.1);
+  border-radius: 8px;
+  background: #ffffff;
+  padding: 1rem;
+  color: rgba(11, 31, 58, 0.74);
+  text-align: center;
+  font-size: 0.95rem;
+  font-weight: 800;
+  box-shadow: 0 10px 28px rgba(11, 31, 58, 0.06);
+}
+
+.metro-card {
+  display: flex;
+  min-height: 17rem;
+  flex-direction: column;
+  justify-content: space-between;
+  border-radius: 8px;
+  background:
+    linear-gradient(150deg, rgba(11, 31, 58, 0.96), rgba(22, 68, 109, 0.92));
+  padding: 1.35rem;
+  color: #ffffff;
+}
+
+.metro-card svg {
+  color: #c9a227;
+}
+
+.metro-card span {
+  color: rgba(201, 162, 39, 0.76);
+}
+
+.metro-card h4 {
+  color: #ffffff;
+}
+
+.metro-card p {
+  color: rgba(255, 255, 255, 0.66);
+}
+
 .founder-card {
+  position: relative;
   display: flex;
   min-height: 30rem;
   flex-direction: column;
   justify-content: space-between;
   overflow: hidden;
   border-radius: 8px;
-  background:
-    radial-gradient(circle at 70% 18%, rgba(201, 162, 39, 0.26), transparent 18rem),
-    linear-gradient(150deg, #0b1f3a, #16446d);
-  padding: 2rem;
+  background: #0b1f3a;
   box-shadow: 0 24px 70px rgba(11, 31, 58, 0.16);
+}
+
+.founder-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(180deg, rgba(11, 31, 58, 0.02) 30%, rgba(11, 31, 58, 0.78) 100%),
+    linear-gradient(90deg, rgba(11, 31, 58, 0.18), transparent 56%);
+  pointer-events: none;
+}
+
+.founder-photo {
+  position: absolute;
+  inset: 0;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  object-position: center top;
+}
+
+.founder-caption {
+  position: relative;
+  z-index: 1;
+  margin-top: auto;
+  padding: 2rem;
+}
+
+.founder-caption p {
+  color: #c9a227;
+  font-size: 0.82rem;
+  font-weight: 800;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+}
+
+.founder-caption h2 {
+  margin-top: 0.5rem;
+  color: #ffffff;
+  font-family: var(--font-plex);
+  font-size: clamp(2rem, 5vw, 3.25rem);
+  font-weight: 700;
+  line-height: 1;
 }
 
 .dark .visual-map {
@@ -273,6 +390,21 @@ body {
 
 .dark .process-step strong {
   color: #ffffff;
+}
+
+.dark .lifecycle-card,
+.dark .brand-tile {
+  border-color: rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.dark .lifecycle-card h3,
+.dark .brand-tile {
+  color: rgba(255, 255, 255, 0.88);
+}
+
+.dark .lifecycle-card p {
+  color: rgba(255, 255, 255, 0.64);
 }
 
 .reveal-in {
