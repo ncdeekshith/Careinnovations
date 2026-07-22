@@ -33,12 +33,13 @@ import { Reveal } from "@/components/Motion";
 import { ThemeToggle } from "@/components/ThemeToggle";
 
 const navItems = [
-  ["Firm", "#about"],
-  ["Services", "#services"],
-  ["Impact", "#impact"],
-  ["Approach", "#process"],
-  ["Team", "#strategists"],
-  ["Contact", "#contact"]
+  ["Home", "/"],
+  ["Firm", "/firm"],
+  ["Services", "/services"],
+  ["Clients", "/clients"],
+  ["Approach", "/approach"],
+  ["Team", "/team"],
+  ["Contact", "/contact"]
 ];
 
 const proof = [
@@ -100,6 +101,19 @@ const partners = [
   "RCCL"
 ];
 
+const governmentClients = [
+  "Department of Rural Development and Panchayat Raj, GoK",
+  "Commercial Tax Department, GoK",
+  "KUIDFC, GoK",
+  "Directorate of Municipal Administration, GoK",
+  "Mysuru Municipal Corporation",
+  "Belagavi Municipal Corporation",
+  "Hubli-Dharwad Municipal Corporation",
+  "Gulbarga Municipal Corporation",
+  "HESCOM, GoK",
+  "Police Computer Wing Bengaluru, GoK"
+];
+
 const metroWins = [
   ["Gujarat Metro", "Networking solution breakthrough"],
   ["Chennai Metro", "Public infrastructure opportunity"],
@@ -132,7 +146,7 @@ const strategists = [
     name: "Shivaprasad Hiremath",
     role: "Education & Market Access Strategist",
     image: `${assetBase}/images/team-shivaprasad-hiremath.jpeg`,
-    summary: "Co-founder and operator focused on democratizing EdTech access in Bharat through networks, sales systems and micro-entrepreneurship.",
+    summary: "Market access operator focused on democratizing EdTech access in Bharat through networks, sales systems and micro-entrepreneurship.",
     highlights: [
       "Bharat and rural education access",
       "B2B sales and B2C sales execution",
@@ -149,7 +163,7 @@ export default function Home() {
     <main className="overflow-hidden bg-white text-ink dark:bg-[#071528] dark:text-white">
       <header className="fixed inset-x-0 top-0 z-50 border-b border-navy/10 bg-white/86 backdrop-blur-xl dark:border-white/10 dark:bg-[#071528]/84">
         <nav className="section flex h-16 items-center justify-between sm:h-20">
-          <a href="#home" className="flex items-center gap-3" aria-label="Care Innovations home">
+          <a href="/" className="flex items-center gap-3" aria-label="Care Innovations home">
             <span className="grid h-10 w-10 shrink-0 place-items-center rounded-lg bg-navy text-base font-semibold text-gold shadow-sm sm:h-11 sm:w-11 sm:text-lg dark:bg-white dark:text-navy">
               CI
             </span>
@@ -177,7 +191,7 @@ export default function Home() {
 
           <div className="flex items-center gap-3">
             <ThemeToggle />
-            <a href="#contact" className="btn-primary hidden sm:inline-flex">
+            <a href="/contact" className="btn-primary hidden sm:inline-flex">
               Book a Call <ArrowRight size={16} />
             </a>
             <button
@@ -224,10 +238,10 @@ export default function Home() {
               Care Innovations helps companies find the right opportunities, build the right relationships, and move deals forward.
             </p>
             <div className="mt-7 flex flex-col gap-3 sm:mt-9 sm:flex-row">
-              <a href="#contact" className="btn-primary">
+              <a href="/contact" className="btn-primary">
                 Book a Strategy Call <ArrowRight size={17} />
               </a>
-              <a href="#services" className="btn-secondary">
+              <a href="/services" className="btn-secondary">
                 View Capabilities
               </a>
             </div>
@@ -412,10 +426,15 @@ export default function Home() {
         <div className="section">
           <Reveal className="grid gap-8 lg:grid-cols-[0.8fr_1.2fr] lg:items-end">
             <div>
-              <p className="eyebrow mb-4">Partnerships</p>
-              <h2 className="heading-lg text-balance">Trusted by leading organizations across industrial, mobility, insurance and networking segments.</h2>
+              <p className="eyebrow mb-4">Clients</p>
+              <h2 className="heading-lg text-balance">Trusted across government departments, urban bodies, industrial, mobility, insurance and networking segments.</h2>
             </div>
             <div className="mobile-brand-rail grid grid-cols-2 gap-2 sm:gap-3 md:grid-cols-3">
+              {governmentClients.map((client) => (
+                <div key={client} className="brand-tile">
+                  {client}
+                </div>
+              ))}
               {partners.map((partner) => (
                 <div key={partner} className="brand-tile">
                   {partner}
@@ -592,7 +611,7 @@ export default function Home() {
               <h2 className="font-display text-3xl font-semibold sm:text-5xl">Start a growth conversation.</h2>
               <div className="mt-7 space-y-4 text-sm leading-6 text-white/72 sm:mt-10 sm:text-base">
                 <p className="flex items-center gap-3"><Mail className="text-gold" size={20} /> <span className="break-all">care.aravind@gmail.com</span></p>
-                <p className="flex items-center gap-3"><Phone className="text-gold" size={20} /> Strategy call by appointment</p>
+                <p className="flex items-center gap-3"><Phone className="text-gold" size={20} /> <span>9845268789 / 8050323560</span></p>
                 <p className="flex items-start gap-3"><MapPin className="mt-1 text-gold" size={20} /> No. 23/6, First Floor, JSM Complex, D Rajgopal Road, Sanjay Nagar, Bangalore - 560094</p>
               </div>
             </div>
@@ -652,14 +671,16 @@ export default function Home() {
           <div className="hidden sm:block">
             <h3 className="mb-3 text-sm font-semibold text-navy dark:text-white">Services</h3>
             <div className="space-y-2 text-sm text-ink/60 dark:text-white/58">
-              <a href="#services" className="block hover:text-gold">Opportunity Development</a>
-              <a href="#services" className="block hover:text-gold">Growth Advisory</a>
-              <a href="#services" className="block hover:text-gold">Sales Support</a>
+              <a href="/services" className="block hover:text-gold">Opportunity Development</a>
+              <a href="/services" className="block hover:text-gold">Growth Advisory</a>
+              <a href="/services" className="block hover:text-gold">Sales Support</a>
             </div>
           </div>
           <div>
             <h3 className="mb-3 text-sm font-semibold text-navy dark:text-white">Contact</h3>
             <a href="mailto:care.aravind@gmail.com" className="block text-sm text-ink/60 hover:text-gold dark:text-white/58">care.aravind@gmail.com</a>
+            <a href="tel:+919845268789" className="mt-2 block text-sm text-ink/60 hover:text-gold dark:text-white/58">9845268789</a>
+            <a href="tel:+918050323560" className="mt-1 block text-sm text-ink/60 hover:text-gold dark:text-white/58">8050323560</a>
             <p className="mt-3 max-w-xs text-sm leading-6 text-ink/60 dark:text-white/58">
               No. 23/6, First Floor, JSM Complex, D Rajgopal Road, Sanjay Nagar, Bangalore - 560094
             </p>
